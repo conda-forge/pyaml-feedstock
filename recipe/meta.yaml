@@ -7,7 +7,7 @@ package:
 source:
   fn: pyaml-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pyaml/pyaml-{{ version }}.tar.gz
-  md5: e3a39e02dffaf5f6efa8ccdd22745739
+  sha256: 9c54fb5f17b58572c4cef50affea60bb73f445ab153580dac07a12383712b5b8
 
 build:
 
