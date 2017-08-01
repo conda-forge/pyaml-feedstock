@@ -1,17 +1,21 @@
+{% set name = "pyaml" %}
 {% set version = "17.7.2" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "e2de6b5ea87fd72ca266879995ac3f5394b4e66a74c47b55b6044b0578ce4f8c" %}
+{% set build = 0 %}
 
 package:
-  name: pyaml
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: pyaml-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/p/pyaml/pyaml-{{ version }}.tar.gz
-  sha256: e2de6b5ea87fd72ca266879995ac3f5394b4e66a74c47b55b6044b0578ce4f8c
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
-
-  number: 0
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -31,7 +35,10 @@ test:
 about:
   home: https://github.com/mk-fg/pretty-yaml
   license: WTFPL
+  license_file: COPYING
   summary: 'PyYAML-based module to produce pretty and readable YAML-serialized data'
+  dev_url: https://github.com/mk-fg/pretty-yaml
+  doc_url: https://github.com/mk-fg/pretty-yaml
 
 extra:
   recipe-maintainers:
