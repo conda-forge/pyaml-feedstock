@@ -1,4 +1,4 @@
-{% set version = "16.12.2" %}
+{% set version = "17.7.2" %}
 
 package:
   name: pyaml
@@ -7,7 +7,7 @@ package:
 source:
   fn: pyaml-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/p/pyaml/pyaml-{{ version }}.tar.gz
-  sha256: b865e4f53a85f4d8a092e7701f759a3237fb3ee8a928627401914aafadc00907
+  sha256: e2de6b5ea87fd72ca266879995ac3f5394b4e66a74c47b55b6044b0578ce4f8c
 
 build:
 
