@@ -1,8 +1,8 @@
 {% set name = "pyaml" %}
-{% set version = "18.11.0" %}
+{% set version = "19.4.1" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "b96292cc409e0f222b6fecff96afd2e19cfab5d1f2606344907751d42301263a" %}
+{% set hash = "c79ae98ececda136a034115ca178ee8bf3aa7df236c488c2f55d12f177b88f1e" %}
 {% set build = 0 %}
 
 package:
