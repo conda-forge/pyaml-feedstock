@@ -1,7 +1,7 @@
 {% set name = "pyaml" %}
-{% set version = "20.4.0" %}
+{% set version = "21.8.3" %}
 {% set bundle = "tar.gz" %}
-{% set hash = "29a5c2a68660a799103d6949167bd6c7953d031449d08802386372de1db6ad71" %}
+{% set hash = "a1636d63c476328a07213d0b7111bb63570f1ab8a3eddf60522630250c23d975" %}
 {% set build = 0 %}
 
 package:
@@ -19,7 +19,7 @@ build:
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
 
