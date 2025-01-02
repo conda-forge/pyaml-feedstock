@@ -1,5 +1,5 @@
 {% set name = "pyaml" %}
-{% set version = "24.12.1" %}
+{% set version = "25.1.0" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyaml-{{ version }}.tar.gz
-  sha256: 3938c2b47924ed74524f844961a011852f7968fb8cc7b3933276087c5d1e45b3
+  sha256: 33a93ac49218f57e020b81e280d2706cea554ac5a76445ac79add760d019c709
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
