@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  name: pyaml
+  version: 25.5.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyaml-${{ version }}.tar.gz
+  sha256: 5799560c7b1c9daf35a7a4535f53e2c30323f74cbd7cb4f2e715b16dd681a58a
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points: 
+      - pyaml=pyaml.cli:main
+
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - pyyaml
+
+tests:
+  - python:
+      imports:
+        - pyaml
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - script: pyaml --help
+    requirements:
+      run: python ${{ python_min }}.*
+
+about:
+  license: WTFPL
+  license_file: COPYING
+  summary: PyYAML-based module to produce pretty and readable YAML-serialized data
+  homepage: https://github.com/mk-fg/pretty-yaml
+
+extra:
+  recipe-maintainers:
+    - thewchan
