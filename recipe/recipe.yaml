@@ -13,7 +13,7 @@ source:
   sha256: 489dd82997235d4cfcf76a6287fce2f075487d77a6567c271e8d790583690c68
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -38,7 +38,8 @@ tests:
       python_version: ${{ python_min }}.*
   - script: pyaml --help
     requirements:
-      run: python ${{ python_min }}.*
+      run:
+        - python ${{ python_min }}.*
 
 about:
   license: WTFPL
